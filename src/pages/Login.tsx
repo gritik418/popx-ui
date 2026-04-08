@@ -16,9 +16,17 @@ const Login = () => {
         </p>
       </div>
 
-      <InputField className="mb-3.5" />
+      <InputField
+        labelText="Email Address"
+        placeholderText="Enter email address"
+        className="mb-3.5"
+      />
 
-      <InputField className="mb-3.5" />
+      <InputField
+        labelText="Password"
+        placeholderText="Enter password"
+        className="mb-3.5"
+      />
 
       <Button color="#CBCBCB" fontColor="#FFFFFF">
         Login

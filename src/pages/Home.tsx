@@ -2,7 +2,7 @@ import Button from "../components/Button";
 
 const Home = () => {
   return (
-    <div className="px-5 py-10.25 flex flex-col h-full justify-end">
+    <div className="px-5 bg-[#F7F8F9] py-10.25 flex flex-col h-full justify-end">
       <div className="h-8.25 flex items-center mb-2.5">
         <h1 className="text-[#1D2226] text-[28px] font-medium">
           Welcome to PopX
