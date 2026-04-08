@@ -4,13 +4,15 @@ type RadioButtonProps = {
   labelText: string;
   isRequired?: boolean;
   options: string[];
-  selected?: string;
+  value: string;
+  onChange: (value: string) => void;
 };
 
 const RadioButton = ({
   labelText,
   options,
-  selected = "",
+  value = "",
+  onChange,
   isRequired = false,
 }: RadioButtonProps) => {
   return (
@@ -22,11 +24,14 @@ const RadioButton = ({
 
       <div className="flex gap-5.75">
         {options.map((option) => (
-          <div className="flex gap-3 items-center box-border">
+          <div
+            onClick={() => onChange(option)}
+            className="flex gap-3 cursor-pointer items-center box-border"
+          >
             <div
-              className={`h-5.5 w-5.5 items-center justify-center flex rounded-full border ${selected === option ? "border-[#6C25FF]" : "border-[#919191]"}`}
+              className={`h-5.5 cursor-pointer w-5.5 items-center justify-center flex rounded-full border ${value === option ? "border-[#6C25FF]" : "border-[#919191]"}`}
             >
-              {selected === option ? (
+              {value === option ? (
                 <div className="h-3 w-3 rounded-full bg-[#6C25FF]"></div>
               ) : null}
             </div>

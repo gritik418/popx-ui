@@ -1,7 +1,22 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import InputField from "../components/InputField";
+import { useState } from "react";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const handleLogin = () => {
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    navigate("/account");
+  };
+
   return (
     <div className="px-5 py-10 bg-[#F7F8F9] h-full">
       <div className="h-17.25 w-47 mb-3.5">
@@ -20,15 +35,23 @@ const Login = () => {
         labelText="Email Address"
         placeholderText="Enter email address"
         className="mb-3.5"
+        value={email}
+        setValue={setEmail}
       />
 
       <InputField
         labelText="Password"
         placeholderText="Enter password"
         className="mb-3.5"
+        value={password}
+        setValue={setPassword}
       />
 
-      <Button color="#CBCBCB" fontColor="#FFFFFF">
+      <Button
+        onClick={handleLogin}
+        color={!email || !password ? "#CBCBCB" : "#6C25FF"}
+        fontColor="#FFFFFF"
+      >
         Login
       </Button>
     </div>

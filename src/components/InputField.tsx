@@ -4,12 +4,16 @@ type InputFieldProps = {
   placeholderText?: string;
   isRequired?: boolean;
   defaultValue?: string;
+  value: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const InputField = ({
   className,
   labelText,
   placeholderText,
+  value,
+  setValue,
   isRequired = false,
   defaultValue = "",
 }: InputFieldProps) => {
@@ -24,6 +28,8 @@ const InputField = ({
 
       <input
         type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
         placeholder={placeholderText}
         defaultValue={defaultValue}
         className="h-10 w-full text-[#1D2226] placeholder:text-[14px] placeholder:text-[#919191] rounded-md px-4 border-[#CBCBCB] border"

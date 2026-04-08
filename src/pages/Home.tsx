@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 const Home = () => {
@@ -15,13 +16,17 @@ const Home = () => {
         </p>
       </div>
 
-      <Button className="mb-2.5" color="#6C25FF">
-        Create Account
-      </Button>
+      <Link to={"/signup"}>
+        <Button className="mb-2.5" color="#6C25FF">
+          Create Account
+        </Button>
+      </Link>
 
-      <Button color="#6C25FF4B" fontColor="#1D2226">
-        Already Registered? Login
-      </Button>
+      <Link to={"/login"}>
+        <Button color="#6C25FF4B" fontColor="#1D2226">
+          Already Registered? Login
+        </Button>
+      </Link>
     </div>
   );
 };
