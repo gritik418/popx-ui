@@ -5,6 +5,7 @@ type InputFieldProps = {
   isRequired?: boolean;
   defaultValue?: string;
   value: string;
+  type?: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
@@ -15,6 +16,7 @@ const InputField = ({
   value,
   setValue,
   isRequired = false,
+  type = "text",
   defaultValue = "",
 }: InputFieldProps) => {
   return (
@@ -27,7 +29,7 @@ const InputField = ({
       </label>
 
       <input
-        type="text"
+        type={type}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder={placeholderText}

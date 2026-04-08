@@ -68,6 +68,7 @@ const Signup = () => {
           placeholderText="Enter password"
           defaultValue="Marry Doe"
           className="mb-5"
+          type="password"
           isRequired
         />
 

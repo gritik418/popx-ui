@@ -43,6 +43,7 @@ const Login = () => {
         labelText="Password"
         placeholderText="Enter password"
         className="mb-3.5"
+        type="password"
         value={password}
         setValue={setPassword}
       />
