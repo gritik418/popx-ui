@@ -18,6 +18,7 @@ const Home = () => {
       <Button className="mb-2.5" color="#6C25FF">
         Create Account
       </Button>
+
       <Button color="#6C25FF4B" fontColor="#1D2226">
         Already Registered? Login
       </Button>
